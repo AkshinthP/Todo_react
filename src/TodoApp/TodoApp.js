@@ -15,11 +15,13 @@ export default class TodoApp extends Component {
     storeItems=(event)=>{
       event.preventDefault()
       const{input}=this.state
-      
-      this.setState({
-        items:[...this.state.items,input],
-        input:""
-      })
+      if(input!=''){
+        this.setState({
+          items:[...this.state.items,input],
+          input:""
+        })
+      }
+
 }
     deleteItems=(key)=>{
     //   const allItems=this.state.items
